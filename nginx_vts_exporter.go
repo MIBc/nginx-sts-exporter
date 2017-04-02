@@ -29,8 +29,8 @@ type NginxVts struct {
 		Handled  int `json:"handled"`
 		Requests int `json:"requests"`
 	} `json:"connections"`
-	ServerZones   map[string]Server     `json:"serverZones"`
-	UpstreamZones map[string][]Upstream `json:"upstreamZones"`
+	ServerZones   map[string]Server     `json:"streamServerZones"`
+	UpstreamZones map[string][]Upstream `json:"streamUpstreamZones"`
 	CacheZones    map[string]Cache      `json:"cacheZones"`
 }
 
