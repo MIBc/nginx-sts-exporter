@@ -1,5 +1,5 @@
 FROM        alpine:latest
-MAINTAINER  Sophos <hnlq.sysu@gmail.com>
+MAINTAINER  Marrotte <marrotte@gmail.com>
 
 WORKDIR /bin
 COPY bin/nginx-sts-exporter /bin/
