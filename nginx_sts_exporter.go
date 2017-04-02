@@ -86,7 +86,7 @@ type Upstream struct {
 		FourXx  int `json:"4xx"`
 		FiveXx  int `json:"5xx"`
 	} `json:"responses"`
-	ResponseMsec int  `json:"responseMsec"`
+	ResponseMsec int  `json:"uSessionMsec"`
 	Weight       int  `json:"weight"`
 	MaxFails     int  `json:"maxFails"`
 	FailTimeout  int  `json:"failTimeout"`
