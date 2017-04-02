@@ -8,7 +8,7 @@ docker build --tag=$tag_name \
              --file=Dockerfile-build . 
 
 echo "[Step 2] - Copying the binary from docker image"
-docker run --rm --volume=$bin_diretory:/output $tag_name cp /build/nginx-vts-exporter /output/nginx-vts-exporter >/dev/null 2>&1
+docker run --rm --volume=$bin_diretory:/output $tag_name cp /build/nginx-sts-exporter /output/nginx-sts-exporter >/dev/null 2>&1
 
 echo "[Step 3] - Tranfering ownership to current user"
 sudo chown -R `whoami`:`whoami` $bin_diretory >/dev/null 2>&1

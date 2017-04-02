@@ -1,9 +1,9 @@
-# nginx-vts-exporter
+# nginx-sts-exporter
 
-![Docker Repository on Quay](https://quay.io/repository/hnlq715/nginx-vts-exporter/status)
-![Docker Pulls](https://img.shields.io/docker/pulls/sophos/nginx-vts-exporter.svg)
+![Docker Repository on Quay](https://quay.io/repository/marrotte/nginx-sts-exporter/status)
+![Docker Pulls](https://img.shields.io/docker/pulls/marrotte/nginx-sts-exporter.svg)
 
-Simple server that scrapes Nginx vts stats and exports them via HTTP for Prometheus consumption
+Simple server that scrapes Nginx sts stats and exports them via HTTP for Prometheus consumption.
 
 ## Table of Contents
 * [Dependency](#dependency)
@@ -21,13 +21,13 @@ Simple server that scrapes Nginx vts stats and exports them via HTTP for Prometh
 
 ## Dependency
 
-* [nginx-module-vts](https://github.com/vozlt/nginx-module-vts)
+* [nginx-module-sts](https://github.com/vozlt/nginx-module-sts)
 * [Prometheus](https://prometheus.io/)
 * [Golang](https://golang.org/)
 
 ## Download
 
-Binary can be downloaded from [Releases](https://github.com/hnlq715/nginx-vts-exporter/releases) page.
+Binary can be downloaded from [Releases](https://github.com/marrotte/nginx-sts-exporter/releases) page.
 
 ## Compile
 
@@ -41,7 +41,7 @@ export the binary inside ./bin/ directory
 ## Run
 
 ``` shell
-nohup /bin/nginx-vts-exporter -nginx.scrape_uri=http://localhost/status/format/json
+nohup /bin/nginx-sts-exporter -nginx.scrape_uri=http://localhost/status/format/json
 ```
 
 ## Dockerized
@@ -61,22 +61,22 @@ METRICS_NS | nginx | Prometheus metrics Namespaces
 
 ## Docker Hub Image
 ``` shell
-docker pull sophos/nginx-vts-exporter:latest
+docker pull sophos/nginx-sts-exporter:latest
 ```
 It can be used directly instead of having to build the image yourself.
-([Docker Hub sophos/nginx-vts-exporter](https://hub.docker.com/r/sophos/nginx-vts-exporter/))
+([Docker Hub sophos/nginx-sts-exporter](https://hub.docker.com/r/sophos/nginx-sts-exporter/))
 
 ### Docker Build
 
 ``` shell
 ./build-binary.sh
-docker build -t vts-export .
+docker build -t sts-export .
 ```
 
 ### Docker Run
 
 ``` shell
-docker run  -ti --rm --env NGIX_HOST="http://localhost/status/format/json" --env METRICS_NS="nginx_prod1" vts-export
+docker run  -ti --rm --env NGIX_HOST="http://localhost/status/format/json" --env METRICS_NS="nginx_prod1" sts-export
 ```
 
 ## Metrics
